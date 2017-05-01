@@ -1,0 +1,119 @@
+<!--
+<section class="property-binding">
+
+  <article>
+    <h3>Interpolação</h3>
+    <p>String gerada com Interpolação: {{url}}</p>
+    <p>Resultado de 1 + 1 é: {{ 1 + 1}}</p>
+    <p>Resultado de 1 + 1 não é: {{1 + 1 + getValor()}}</p>
+    <p>Curso de Angular e gosto do curso: {{cursoAngular && getCurtirCurso()}}</p>
+  </article>
+
+  <article>
+    <h3>Property Imagem</h3>
+    <img src="{{urlImagem}}">
+    <img [src]="urlImagem">
+    <img bind-src="urlImagem">
+  </article>
+
+</section>
+
+
+<section>
+  <article>
+    <h3>Class e Style Binding</h3>
+    <div>
+      Selecione uma classe:
+      <select #classe (change)="0">
+        <option value="alert-success">Sucesso</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-warning">Alerta</option>
+        <option value="alert-danger">Erro</option>
+      </select>
+      <br>
+      <div class="alert {{classe.value}}" role="alert">
+        Texto colorido conforme valor do combobox.
+      </div>
+      <br>
+
+      <div class="alert " role="alert" [class.alert-success]="classe.value == 'alert-success'">Sucesso</div>
+      <div class="alert " role="alert" [class.alert-info]="classe.value == 'alert-info'">Info</div>
+      <div class="alert " role="alert" [class.alert-warning]="classe.value == 'alert-warning'">Alerta</div>
+      <div class="alert " role="alert" [class.alert-danger]="classe.value == 'alert-danger'">Erro</div>
+      <!-- class = "alert-danger" 
+      <div class="alert alert-danger" role="alert"
+        [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+        <!-- style="display:block" 
+        Esse texto aparece somente em caso de erro.
+      </div>
+
+    </div>
+
+  </article>
+</section>
+
+-->
+
+<section>
+  <article>
+    <h3>Event Binding - <a href="https://developer.mozilla.org/en-US/docs/Web/events">MDM Mozilla Dev Netw...</a></h3>
+    <div>
+      <button (click)="  botaoClicado()" class="btn btn-primary">Executar (*)</button>
+      <button on-click="  botaoClicado()" class="btn btn-warning">Executar on-*</button>
+    </div>
+
+    <br/>
+    <div class="row">
+      <div class="col-xs-3"></div>
+      <div class="col-xs-6">
+        <div class="input-group input-group-sm">
+          <span class="input-group-addon" id="basic-addon1">Mané</span>
+
+          <input type="text" 
+              class="form-control"
+              placeholder="Entre com o valor"
+              aria-describedby="basic-addon1"
+              #texto
+              [(ngModel)]="texto2"
+              (keyup)="onKeyUp($event)"
+              (keyup.enter)="salvarValor($event.target.value)"
+              (blur) = "salvarValor(valorSalvoView.value)" 
+              #valorSalvoView
+              />
+
+        </div>
+
+         <br/>
+
+        <p>Valor atual: {{valorAtual}}</p>
+        <p>Valor atual 2 : {{texto.value}}</p>
+        <p>Valor salvo : {{valorSalvo}}</p>
+        <p>Valor salvo na View: {{valorSalvoView.value}}</p>
+
+        <br>
+        
+        <span
+          (mouseover)="onMouseOverOut()"
+          (mouseout)="onMouseOverOut()"
+          [class.higlight]="isMouseOver"
+        >
+          Passe o mouse sobre mim
+        </span>
+
+      </div>
+      <div class="col-xs-3" ></div>
+    </div>   
+
+  </article>
+</section>
+
+<app-meu-form></app-meu-form>
+
+<section class="input-output-properties">
+  <article>
+    <h3>Input/Output Properties</h3>
+
+    <app-curso [coisas]="listaDeCursos" [cursos]="listaDeCursos" [paramCursos]="listaDeCursos"></app-curso>
+
+  </article>
+</section>

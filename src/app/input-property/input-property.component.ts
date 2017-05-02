@@ -19,9 +19,16 @@ export class InputPropertyComponent implements OnInit {
 
   listaDeCoisas: any[];
 
-  constructor() { }
+  destaque: boolean = true;
+
+  constructor() {}
 
   ngOnInit() {
+  }
+
+  changeDestaque(item){
+    this.destaque = !this.destaque;
+    console.log('Passou o item: ' + item);
   }
 
 }

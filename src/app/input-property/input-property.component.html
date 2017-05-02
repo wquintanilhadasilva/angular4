@@ -1,12 +1,37 @@
 <p>Parametro "Cursos":</p>
 <ul>
-  <li *ngFor="let item of listaDeCursos">{{item}}</li>
+  <li *ngFor="let item of listaDeCursos">
+    <span [class.destaque]="destaque"
+          [class.semDestaque]="!destaque"
+          >
+          {{changeDestaque(item)}}
+          {{item}}
+
+    </span>
+  </li>
 </ul>
 <p>Lista de "Coisas":</p>
 <ul>
-  <li *ngFor="let item of listaDeCoisas">{{item}}</li>
+  <li *ngFor="let item of listaDeCoisas">
+    <span [class.destaque]="destaque"
+          [class.semDestaque]="!destaque"
+          >
+          {{changeDestaque(item)}}
+          {{item}}
+
+    </span>
+  </li>
 </ul>
 <p>"Cursos":</p>
 <ul>
-  <li *ngFor="let item of cursos">{{item}}</li>
+  <li *ngFor="let item of cursos">
+
+    <span [class.destaque]="destaque"
+          [class.semDestaque]="!destaque"
+          >
+          {{changeDestaque(item)}}
+          {{item}}
+
+    </span>
+  </li>
 </ul>

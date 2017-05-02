@@ -2,3 +2,13 @@ p{
     background-color: yellow;
     font-weight: bold;
 }
+
+.destaque{
+    background-color: gray;
+    color: white;
+}
+
+.semDestaque{
+    background-color: green;
+    color: yellow;
+}

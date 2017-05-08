@@ -26,8 +26,8 @@
 <ul>
   <li *ngFor="let item of cursos">
 
-    <span [class.destaque]="destaque"
-          [class.semDestaque]="!destaque"
+    <span 
+          [class]="destaque ? 'destaque' : 'semDestaque'"
           >
           {{changeDestaque(item)}}
           {{item}}

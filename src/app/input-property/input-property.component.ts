@@ -28,7 +28,7 @@ export class InputPropertyComponent implements OnInit {
 
   changeDestaque(item){
     this.destaque = !this.destaque;
-    console.log('Passou o item: ' + item);
+    //console.log('Passou o item: ' + item);
   }
 
 }

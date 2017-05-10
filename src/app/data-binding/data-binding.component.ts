@@ -27,10 +27,15 @@ export class DataBindingComponent implements OnInit {
 
   listaDeCursos: any = ['AngularJS', 'Dot Net C#', 'Java EE', 'Arquitetura'];
 
+  valorInicial: number = 15;
+
+  valorEvento: number;
+
   constructor() {  
   }
 
   ngOnInit() {
+    this.valorEvento = this.valorInicial;
   }
 
   getValor(){
@@ -55,6 +60,11 @@ export class DataBindingComponent implements OnInit {
 
   onMouseOverOut(){
     this.isMouseOver = !this.isMouseOver;
+  }
+
+  onMudouValor(evento){
+    console.log('data-binding: ' + evento.novoValor);
+    this.valorEvento = evento.novoValor;
   }
 
 }

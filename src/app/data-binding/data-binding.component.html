@@ -1,3 +1,13 @@
+<section>
+  <article>
+    <contador [valor]="valorInicial"
+              (mudouValor)="onMudouValor($event)"
+    ></contador>
+
+    <span>Valor atualizado pelo evento {{valorEvento}}</span>
+  </article>
+</section>
+
 <section class="property-binding">
 
   <article>
@@ -16,7 +26,6 @@
   </article>
 
 </section>
-
 
 <section>
   <article>
@@ -50,8 +59,6 @@
 
   </article>
 </section>
-
-
 
 <section>
   <article>
